@@ -8,9 +8,17 @@ jobs:
    steps:
     - checkout
     - run : echo "test pass"
+
+  "npmSetup":
+   steps:
+    - checkout
+    - run : npm install -g
+    - run : npm test
+    - run : echo "NPM installed successfully"
    
 workflows:
  version: 2
  build:  
   jobs:
    - "environmentSetup"
+   - "npmSetup"
