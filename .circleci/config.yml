@@ -8,12 +8,6 @@ jobs:
    steps:
     - checkout
     - run : echo "test pass"
-
-  "npmSetup":
-  docker:
-    - image: circleci/openjdk:8-jdk
-   steps:
-    - checkout
     - run : npm install -g
     - run : npm test
     - run : echo "NPM installed successfully"
@@ -23,4 +17,3 @@ workflows:
  build:  
   jobs:
    - "environmentSetup"
-   - "npmSetup"
