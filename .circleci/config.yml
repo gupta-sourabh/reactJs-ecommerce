@@ -10,6 +10,8 @@ jobs:
     - run : echo "test pass"
 
   "npmSetup":
+  docker:
+    - image: circleci/openjdk:8-jdk
    steps:
     - checkout
     - run : npm install -g
